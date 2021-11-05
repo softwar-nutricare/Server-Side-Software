@@ -21,10 +21,13 @@ public class Bill extends AuditModel{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="client_id", nullable = false)
+    //@ManyToOne(fetch = FetchType.LAZY)
+   // @JoinColumn(name="client_id", nullable = false)
     //@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
-    private Client client;
+    @NotNull
+    @NotBlank
+    @Column(name="client", nullable = false)
+    private String client;
 
 
 

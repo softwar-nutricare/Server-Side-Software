@@ -13,7 +13,7 @@ import javax.validation.constraints.Size;
 public class CreateBillResource {
 
     @NotNull
-    private Client client;
+    private String client;
 
     @NotNull
     private String amount;

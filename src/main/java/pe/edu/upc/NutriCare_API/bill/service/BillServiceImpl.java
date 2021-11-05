@@ -61,9 +61,10 @@ public class BillServiceImpl implements BillService {
 
         return billRepository.findById(billId).map(bill ->
                 billRepository.save(
-                        bill.withAmount(request.getAmount())
+                        bill.withClient(request.getClient())
+                        .withAmount(request.getAmount())
                                 .withRuc(request.getRuc())
-                        .withClient(request.getClient()))
+                        )
         ).orElseThrow(() -> new ResourceNotFoundException(ENTITY, billId));
     }
 

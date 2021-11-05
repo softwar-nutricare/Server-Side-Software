@@ -14,7 +14,7 @@ public class UpdateBillResource {
 
     private Long id;
     @NotNull
-    private Client client;
+    private String client;
 
     @NotNull
     private String amount;

@@ -8,6 +8,7 @@ import pe.edu.upc.NutriCare_API.client.domain.model.entity.Client;
 public class BillResource {
 
     private Long id;
+    private String client;
     private String amount;
     private String ruc;
 }
