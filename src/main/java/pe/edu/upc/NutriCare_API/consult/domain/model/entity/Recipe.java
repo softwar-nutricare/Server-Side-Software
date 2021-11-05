@@ -1,15 +1,12 @@
 package pe.edu.upc.NutriCare_API.consult.domain.model.entity;
 
 import lombok.*;
-import org.hibernate.annotations.Type;
-import pe.edu.upc.NutriCare_API.shared.domain.model.AuditModel;
+import pe.edu.upc.NutriCare_API.shared.domain.AuditModel;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import javax.xml.transform.Source;
-import java.util.List;
 
 @Getter
 @Setter
