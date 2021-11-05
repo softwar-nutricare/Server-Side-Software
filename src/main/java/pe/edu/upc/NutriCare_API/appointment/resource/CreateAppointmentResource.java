@@ -1,20 +1,17 @@
-package pe.edu.upc.NutriCare_API.bill.resource;
-
+package pe.edu.upc.NutriCare_API.appointment.resource;
 import lombok.Getter;
 import lombok.Setter;
 import pe.edu.upc.NutriCare_API.client.domain.model.entity.Client;
 import pe.edu.upc.NutriCare_API.diet.domain.model.entity.Diet;
 import pe.edu.upc.NutriCare_API.nutritionist.domain.model.entity.Nutritionist;
-
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 
 @Getter
 @Setter
-public class UpdateBillResource {
+public class CreateAppointmentResource {
 
-    private Long id;
     @NotNull
     private Client client;
 
