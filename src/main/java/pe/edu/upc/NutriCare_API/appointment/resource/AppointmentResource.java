@@ -6,5 +6,8 @@ import lombok.Setter;
 @Setter
 public class AppointmentResource {
     private Long id;
+    private String client;
+    private String nutritionist;
+    private String diet;
     private String nutritionistNotes;
 }

@@ -13,13 +13,13 @@ import javax.validation.constraints.Size;
 public class CreateAppointmentResource {
 
     @NotNull
-    private Client client;
+    private String client;
 
     @NotNull
-    private Diet diet;
+    private String diet;
 
     @NotNull
-    private Nutritionist nutritionist;
+    private String nutritionist;
 
     @NotNull
     @Size(max = 160)

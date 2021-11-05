@@ -59,7 +59,10 @@ public class AppointmentServiceImpl implements AppointmentService {
 
         return appointmentRepository.findById(appointmentId).map(appointment ->
                 appointmentRepository.save(
-                        appointment.withNutritionistNotes(request.getNutritionistNotes())
+                        appointment.withClient(request.getClient())
+                                .withNutritionist(request.getNutritionist())
+                                .withDiet(request.getDiet())
+                                .withNutritionistNotes(request.getNutritionistNotes())
                         )
         ).orElseThrow(() -> new ResourceNotFoundException(ENTITY, appointmentId));
     }

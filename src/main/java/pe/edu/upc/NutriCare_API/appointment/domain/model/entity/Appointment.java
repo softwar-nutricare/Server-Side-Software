@@ -21,20 +21,29 @@ public class Appointment extends AuditModel{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="client_id", nullable = false)
+    //@ManyToOne(fetch = FetchType.LAZY)
+    //@JoinColumn(name="client_id", nullable = false)
     //@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
-    private Client client;
+    @NotNull
+    @NotBlank
+    @Column(name = "client", nullable = true)
+    private String client;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="nutritionist_id", nullable = false)
+    // @ManyToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name="nutritionist_id", nullable = false)
     //@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
-    private Nutritionist nutritionist;
+    @NotNull
+    @NotBlank
+    @Column(name = "nutritionist", nullable = true)
+    private String nutritionist;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="diet_id", nullable = false)
+    //@ManyToOne(fetch = FetchType.LAZY)
+    //@JoinColumn(name="diet_id", nullable = false)
     //@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
-    private Diet diet;
+    @NotNull
+    @NotBlank
+    @Column(name = "diet", nullable = true)
+    private String diet;
 
 
     @NotNull
