@@ -7,7 +7,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Length;
-import pe.edu.upc.NutriCare_API.nutritionist.domain.model.entity.Nutritionist;
 import pe.edu.upc.NutriCare_API.shared.domain.AuditModel;
 
 @Getter
@@ -27,9 +26,5 @@ public class Profesional extends AuditModel{
     @Size(max = 100)
     @Column(unique = false)
     private String experience;
-
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "nutritionist_id", nullable = false)
-    private Nutritionist nutritionist;
 
 }

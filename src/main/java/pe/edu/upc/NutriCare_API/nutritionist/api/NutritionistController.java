@@ -21,27 +21,27 @@ public class NutritionistController {
     private NutritionistMapper mapper;
 
     @GetMapping
-    public Page<NutritionistResource> getAllClients(Pageable pageable) {
+    public Page<NutritionistResource> getAllNutritionist(Pageable pageable) {
         return mapper.modelListToPage(nutritionistService.getAll(), pageable);
     }
 
     @GetMapping("{nutritionistId}")
-    public NutritionistResource getClientById(@PathVariable("nutritionistId") Long clientId) {
+    public NutritionistResource getNutritionistById(@PathVariable("nutritionistId") Long clientId) {
         return mapper.toResource(nutritionistService.getById(clientId));
     }
 
     @PostMapping
-    public NutritionistResource createClient(@RequestBody CreateNutritionistResource request) {
+    public NutritionistResource createNutritionist(@RequestBody CreateNutritionistResource request) {
         return mapper.toResource(nutritionistService.create(mapper.toModel(request)));
     }
 
     @PutMapping("{nutritionistId}")
-    public NutritionistResource updateClient(@PathVariable Long nutritionistId, @RequestBody UpdateNutritionistResource request) {
+    public NutritionistResource updateNutritionist(@PathVariable Long nutritionistId, @RequestBody UpdateNutritionistResource request) {
         return mapper.toResource(nutritionistService.update(nutritionistId, mapper.toModel(request)));
     }
 
     @DeleteMapping("{nutritionistId}")
-    public ResponseEntity<?> deleteClient(@PathVariable Long nutritionistId) {
+    public ResponseEntity<?> deleteNutritionist(@PathVariable Long nutritionistId) {
         return nutritionistService.delete(nutritionistId);
     }
 }
