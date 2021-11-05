@@ -21,27 +21,27 @@ public class ProfesionalController {
     private ProfesionalMapper mapper;
 
     @GetMapping
-    public Page<ProfesionalResource> getAllClients(Pageable pageable) {
+    public Page<ProfesionalResource> getProfessionals(Pageable pageable) {
         return mapper.modelListToPage(profesionalService.getAll(), pageable);
     }
 
-    @GetMapping("{profesionalId}")
-    public ProfesionalResource getClientById(@PathVariable("profesionalId") Long clientId) {
+    @GetMapping("{professionalId}")
+    public ProfesionalResource getProfessionalById(@PathVariable("professionalId") Long clientId) {
         return mapper.toResource(profesionalService.getById(clientId));
     }
 
     @PostMapping
-    public ProfesionalResource createClient(@RequestBody CreateProfesionalResource request) {
+    public ProfesionalResource createProfessional(@RequestBody CreateProfesionalResource request) {
         return mapper.toResource(profesionalService.create(mapper.toModel(request)));
     }
 
-    @PutMapping("{profesionalId}")
-    public ProfesionalResource updateClient(@PathVariable Long profesionalId, @RequestBody UpdateProfesionalResource request) {
-        return mapper.toResource(profesionalService.update(profesionalId, mapper.toModel(request)));
+    @PutMapping("{professionalId}")
+    public ProfesionalResource updateProfessional(@PathVariable Long professionalId, @RequestBody UpdateProfesionalResource request) {
+        return mapper.toResource(profesionalService.update(professionalId, mapper.toModel(request)));
     }
 
-    @DeleteMapping("{profesionalId}")
-    public ResponseEntity<?> deleteClient(@PathVariable Long profesionalId) {
-        return profesionalService.delete(profesionalId);
+    @DeleteMapping("{professionalId}")
+    public ResponseEntity<?> deleteProfessional(@PathVariable Long professionalId) {
+        return profesionalService.delete(professionalId);
     }
 }
