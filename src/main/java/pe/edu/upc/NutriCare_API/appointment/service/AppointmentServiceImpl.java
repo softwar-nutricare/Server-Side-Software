@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import pe.edu.upc.NutriCare_API.shared.exception.ResourceNotFoundException;
 import pe.edu.upc.NutriCare_API.shared.exception.ResourceValidationException;
 
@@ -16,6 +17,7 @@ import javax.validation.Validator;
 import java.util.List;
 import java.util.Set;
 
+@Service
 public class AppointmentServiceImpl implements AppointmentService {
 
     private static final String ENTITY = "Appointment";

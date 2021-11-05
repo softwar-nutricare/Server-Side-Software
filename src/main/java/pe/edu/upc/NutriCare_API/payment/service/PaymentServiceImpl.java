@@ -78,8 +78,8 @@ public class PaymentServiceImpl implements PaymentService{
 
     @Override
     public ResponseEntity<?> delete(Long paymentId) {
-        return clientRepository.findById(paymentId).map(payment -> {
-            clientRepository.delete(payment);
+        return paymentRepository.findById(paymentId).map(payment -> {
+            paymentRepository.delete(payment);
             return ResponseEntity.ok().build();
         }).orElseThrow(() -> new ResourceNotFoundException(ENTITY, paymentId));
     }

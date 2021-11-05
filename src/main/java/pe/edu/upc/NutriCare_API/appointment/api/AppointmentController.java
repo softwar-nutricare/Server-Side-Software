@@ -18,7 +18,7 @@ public class AppointmentController {
 
 
 
-    //@Autowired
+    @Autowired
     private AppointmentService appointmentService;
 
 
