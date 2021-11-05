@@ -4,10 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
-import pe.edu.upc.NutriCare_API.bill.domain.model.entity.Bill;
-import pe.edu.upc.NutriCare_API.bill.domain.persistence.BillRepository;
-import pe.edu.upc.NutriCare_API.bill.domain.service.BillService;
-import pe.edu.upc.NutriCare_API.client.domain.persistence.ClientRepository;
 import pe.edu.upc.NutriCare_API.shared.exception.ResourceNotFoundException;
 import pe.edu.upc.NutriCare_API.shared.exception.ResourceValidationException;
 
@@ -20,12 +16,11 @@ import javax.validation.Validator;
 import java.util.List;
 import java.util.Set;
 
-public class AppointmentImpl implements AppointmentService {
+public class AppointmentServiceImpl implements AppointmentService {
 
     private static final String ENTITY = "Appointment";
 
-    @Autowired
-    private ClientRepository clientRepository;
+
     @Autowired
     private AppointmentRepository appointmentRepository;
 

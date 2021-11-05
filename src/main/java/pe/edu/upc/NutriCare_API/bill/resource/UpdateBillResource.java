@@ -3,8 +3,6 @@ package pe.edu.upc.NutriCare_API.bill.resource;
 import lombok.Getter;
 import lombok.Setter;
 import pe.edu.upc.NutriCare_API.client.domain.model.entity.Client;
-import pe.edu.upc.NutriCare_API.diet.domain.model.entity.Diet;
-import pe.edu.upc.NutriCare_API.nutritionist.domain.model.entity.Nutritionist;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -19,12 +17,9 @@ public class UpdateBillResource {
     private Client client;
 
     @NotNull
-    private Diet diet;
+    private String amount;
 
     @NotNull
-    private Nutritionist nutritionist;
-
-    @NotNull
-    @Size(max = 160)
-    private String nutritionistNotes;
+    @Size(max = 16)
+    private String ruc;
 }

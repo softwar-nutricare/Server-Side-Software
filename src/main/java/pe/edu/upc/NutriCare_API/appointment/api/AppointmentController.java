@@ -5,27 +5,20 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.upc.NutriCare_API.bill.domain.service.BillService;
-import pe.edu.upc.NutriCare_API.bill.mapping.BillMapper;
-import pe.edu.upc.NutriCare_API.bill.resource.BillResource;
-import pe.edu.upc.NutriCare_API.bill.resource.CreateBillResource;
-import pe.edu.upc.NutriCare_API.bill.resource.UpdateBillResource;
-import pe.edu.upc.NutriCare_API.client.domain.service.ClientService;
 
-import pe.edu.upc.NutriCare_API.appointment.domain.service.AppointmentService;
 import pe.edu.upc.NutriCare_API.appointment.domain.service.AppointmentService;
 import pe.edu.upc.NutriCare_API.appointment.mapping.AppointmentMapper;
 import pe.edu.upc.NutriCare_API.appointment.resource.AppointmentResource;
 import pe.edu.upc.NutriCare_API.appointment.resource.CreateAppointmentResource;
 import pe.edu.upc.NutriCare_API.appointment.resource.UpdateAppointmentResource;
-import pe.edu.upc.NutriCare_API.appointment.domain.service.AppointmentService;
+
 @RestController
 @RequestMapping("api/v1/appointments")
 public class AppointmentController {
-    @Autowired
-    private ClientService clientService;
 
-    
+
+
+    //@Autowired
     private AppointmentService appointmentService;
 
 
@@ -41,6 +34,7 @@ public class AppointmentController {
     public AppointmentResource getAppointmentById(@PathVariable("appointmentId") Long appointmentId) {
         return mapper.toResource(appointmentService.getById(appointmentId));
     }
+
 
     @PostMapping
     public AppointmentResource createAppointment(@RequestBody CreateAppointmentResource request) {
