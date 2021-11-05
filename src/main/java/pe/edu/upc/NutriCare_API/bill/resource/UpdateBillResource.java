@@ -17,9 +17,9 @@ public class UpdateBillResource {
     private Client client;
 
     @NotNull
-    private Double amount;
+    private String amount;
 
     @NotNull
     @Size(max = 16)
-    private Integer ruc;
+    private String ruc;
 }

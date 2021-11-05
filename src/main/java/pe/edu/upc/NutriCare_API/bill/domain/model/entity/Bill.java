@@ -22,8 +22,8 @@ public class Bill extends AuditModel{
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="bill_id", nullable = false)
-    @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+    @JoinColumn(name="client_id", nullable = false)
+    //@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
     private Client client;
 
 
@@ -31,12 +31,12 @@ public class Bill extends AuditModel{
     @NotNull
     @NotBlank
     @Column(name="amount", nullable = false)
-    private Double amount;
+    private String amount;
 
     @NotNull
     @NotBlank
     @Column(name="ruc", nullable = true)
-    private Integer ruc;
+    private String ruc;
 
 
 
