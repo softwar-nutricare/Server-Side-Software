@@ -13,7 +13,7 @@ public class CreatePaymentResource {
 
 
     @NotNull
-    private Client client;
+    private String client;
     @NotNull
     @Size(max = 60)
     private String cartType;

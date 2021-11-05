@@ -13,7 +13,7 @@ public class UpdatePaymentResource {
 
     private Long id;
     @NotNull
-    private Client client;
+    private String client;
     @NotNull
     @Size(max = 60)
     private String cartType;

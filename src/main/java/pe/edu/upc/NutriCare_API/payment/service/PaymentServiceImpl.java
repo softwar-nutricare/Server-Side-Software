@@ -59,7 +59,8 @@ public class PaymentServiceImpl implements PaymentService{
 
         return paymentRepository.findById(paymentId).map(payment ->
                 paymentRepository.save(
-                        payment.withCartType(request.getCartType())
+                        payment.withClient(request.getClient())
+                                .withCartType(request.getCartType())
                                 .withCardNumber(request.getCardNumber())
                                 .withExpirationDateMonth(request.getExpirationDateMonth())
                                 .withExpirationDateYear(request.getExpirationDateYear())
